@@ -1,6 +1,0 @@
-|| [echo "Running C++ compiler"; g++ functions.cpp; ./a.out]
-|| Running C++ compiler
-|| Hello World!
-|| 
-|| mememachine
-|| [Finished in 0 seconds]
