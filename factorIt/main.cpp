@@ -6,7 +6,7 @@ using namespace std;
 void factorIt (int number) {
 	//"Prime Factorization" is finding which prime numbers multiply together to make the original number.
 	
-	for (int i = 2; i <= number; i++) {		//loop will run until i is lower than the smallest factor, which is 1.
+	for (int i = 2; i <= number; i++) {		//loop will run until number is equal to the smallest factor, which is 2.
 		if (number % i == 0) {			//check if i can be a clean divisor
 			cout << i << " ";		//outputs clean divisor
 			number = number / i;		//updates divisor to find new smallest 
