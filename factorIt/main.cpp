@@ -23,7 +23,7 @@ int main() {
 	cout << "Enter a number greater than 1: ";
 	getline(cin, input);
 
-	if (		cin.fail() ||		//c tools to sanitize input
+	if (		cin.fail() ||		//cin tools to sanitize input
 			cin.eof() ||
 			input.find_first_not_of("0123456789") != string::npos ||
 			atoi(input.c_str()) <= 1 )	//converts string to int before comparing
