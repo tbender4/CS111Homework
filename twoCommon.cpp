@@ -18,11 +18,30 @@ int main () {
 	int most = 0;
 	int mostIndex = 0, secondIndex = 0;
 	int count = 0;
+
+
+///////////////////////////////////////////////////////////////////
+	int userInput[10];
+	int input;
+	for (int i = 0; i < 10; i++) {
+		cout << "Enter a number: ";
+		cin >> input;
+		while (input > 10) {
+			cout << "Too big.\nEnter a number: ";
+			cin >> input;
+		}
+		userInput[i] = input;
+	}
+///////////////////////////////////////////////////////////////////
+
+
 	for (int j = 0; j < 10; j++) {
 		for (int i = 0; i < 10; i++) {
 			if (numbers[i] == numbers[j])
 				count++;
 		}
+
+
 
 		if (count > most) {
 			most = count;
