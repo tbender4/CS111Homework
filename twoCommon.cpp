@@ -1,5 +1,6 @@
 #include "iostream"
 using namespace std;
+
 /*
 1. It asks the user to enter 10 numbers each of which is an integer between 0 and 10.
 
@@ -13,48 +14,45 @@ Note: You will want to make use of an array for this assignment
 */
 
 
+int numberOfTimes(int array[], int number) {
+    int count = 0;
+    for (int i = 0; i < 10; i++) {
+        if (array[i] == number)
+            count++;
+    }
+    return count;
+
+}
+
 int main () {
-	int numbers[10] = { 1, 2, 3, 4, 5, 5, 5, 9, 9, 9 };
 	int most = 0;
 	int mostIndex = 0, secondIndex = 0;
 	int count = 0;
 
-
-///////////////////////////////////////////////////////////////////
-	int userInput[10];
+	int numbers[10];
 	int input;
 	for (int i = 0; i < 10; i++) {
 		cout << "Enter a number: ";
 		cin >> input;
-		while (input > 10) {
-			cout << "Too big.\nEnter a number: ";
+		while (input > 10 || input < 0) {
+			cout << "Invalid input.\nEnter a number: ";
 			cin >> input;
 		}
-		userInput[i] = input;
+		numbers[i] = input;
 	}
-///////////////////////////////////////////////////////////////////
-
 
 	for (int j = 0; j < 10; j++) {
-		for (int i = 0; i < 10; i++) {
-			if (numbers[i] == numbers[j])
-				count++;
-		}
+        if (numberOfTimes(numbers, j) >= most)
+            most = numberOfTimes(numbers, j);
+    }
 
+    cout << "Most common number(s): ";
 
-
-		if (count > most) {
-			most = count;
-			secondIndex=mostIndex;
-			mostIndex=j;
-		}
-		if (count == most && mostIndex != j)
-			secondIndex=mostIndex;
-		count = 0;
-
-
-		cout << "Element: " << j << " Value: " << numbers[j] << " Max Count: " << count << " Most Index: " << mostIndex << endl;
-	}
-	cout << numbers[mostIndex] << " " << numbers[secondIndex] << endl;
+    for (int i = 0; i < 10; i++) {
+        if ( numberOfTimes(numbers, i) == most )
+            cout << numbers[i] << " ";
+    }
+    
+    cout << endl;
 	return 0;
 }
