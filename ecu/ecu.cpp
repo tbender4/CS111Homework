@@ -7,9 +7,9 @@ int gcd(int a, int b) {
     if (a > b)
         swap(a,b);
 
-    cout << "a: " << a << " b: " << b << endl;
+    //cout << "a: " << a << " b: " << b << endl;
 
-    cout << b << " = (" << b/a << ") + " << a << " + " << b%a << endl;
+    cout << b << " = (" << b/a << ") " << a << " + " << b%a << endl;
 
     if (b % a == 0)
         return a;
